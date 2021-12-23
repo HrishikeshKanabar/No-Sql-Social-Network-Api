@@ -67,6 +67,48 @@ router.delete('/:id',({params}, res) => {
 
 });
 
+// add friends 
+router.post('/:usrId/friends/:friendId',({params}, res) => {
+
+    db.User.findOneAndUpdate(
+        {_id:params.usrId},
+        {$push:{friends:params.friendId}},
+        {new:true}
+      )
+      .then(dbUserData => {
+        if (!dbUserData) {
+          return res.status(404).json({ message: 'No user found ' });
+        }
+        res.json(dbUserData);
+      })
+      .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+      });
+   
+});
+
+// delete friends
+
+router.delete('/:usrId/friends/:friendId',({params}, res) => {
+
+    db.User.findOneAndUpdate(
+        {_id:params.usrId},
+        {$pull:{friends:params.friendId}},
+        {new:true}
+        )
+        .then(dbUserData => {
+          if (!dbUserData) {
+            res.status(404).json({ message: 'No user found ' });
+            return;
+          }
+          res.json(dbUserData);
+        })
+        .catch(err => {
+            res.status(400).json(err)
+        });
+   
+});
 
 
 
