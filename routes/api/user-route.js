@@ -1,6 +1,5 @@
 const router = require('express').Router();
 const db = require('../../models');
-test={'value':'key'}
 
 // get all users ---> get
 router.get('/', (req, res) => {
