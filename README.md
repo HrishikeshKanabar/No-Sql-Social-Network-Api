@@ -6,7 +6,9 @@
 
 # View Demo (Video Demo)
 
- [Click here to see demo]()
+ [Click here to see demo Video for User routes -1](https://drive.google.com/file/d/1927Y0nKfvWq5vOcFoporBcAom_OWYVn4/view?usp=sharing)
+
+ [Click here to see demo Video for Thoughts routes -2](https://drive.google.com/file/d/18zqczPEMVnvqgkUCY47PRT68s04HlPBC/view?usp=sharing)
 
 
 # Web Application (how to use)
